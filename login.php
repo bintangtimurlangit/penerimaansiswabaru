@@ -12,48 +12,47 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <link rel="stylesheet" href="styleLogin.css">
     </head>
-<body>
+    <body>
 
-<div class="container">
-    <div class="forms">
-        <div class="form login">
-            <span class="title">Masuk PPDB</span>
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Masuk PPDB</span>
 
-            <form action="loginProcess.php">
-                <div class="input-field">
-                    <input type="text" name="email" placeholder="Masukkan alamat email" required>
-                    <i class="uil uil-envelope icon"></i>
-                </div>
-
-                <div class="input-field">
-                    <input type="password" class="password" name="password" placeholder="Masukkan kata sandi" required>
-                    <i class="uil uil-lock icon"></i>
-                    <i class="uil uil-eye-slash showHidePw"></i>
-                </div>
-
-                <div class="checkbox-text">
-                    <div class="checkbox-content">
-                        <input type="checkbox" id="logCheck">
-                        <label for="logCheck" class="text">Ingat saya</label>
+                <form method="post" action="loginProcess.php">
+                    <div class="input-field">
+                        <input type="text" name="email" placeholder="Masukkan alamat email" required>
+                        <i class="uil uil-envelope icon"></i>
                     </div>
-                    <a href="forgotPassword.php" class="text">Lupa kata sandi?</a>
-                </div>
 
-                <div class="input-field button">
-                    <input type="button" value="Login">
-                </div>
-            </form>
+                    <div class="input-field">
+                        <input type="password" class="password" name="password" placeholder="Masukkan kata sandi" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
 
-            <div class="login-signup">
-                    <span class="text">Belum mendaftar?
-                        <a href="register.php" class="text signup-link">Daftar Sekarang</a>
-                    </span>
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Ingat saya</label>
+                        </div>
+                        <a href="forgotPassword.php" class="text">Lupa kata sandi?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                        <span class="text">Belum mendaftar?
+                            <a href="register.php" class="text signup-link">Daftar Sekarang</a>
+                        </span>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+    </body>
 </html>

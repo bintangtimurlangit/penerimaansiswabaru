@@ -1,14 +1,15 @@
 <?php
+require('debug.php');
+
 $servername = "localhost";
 $username = "root";
-$password = "";
-$db = "db_ppdb_utswebprog";
+$password_db = "";
+$dbname = "db_ppdb_utswebprog";
+$conn = mysqli_connect($servername, $username, $password_db, $dbname);
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $db);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+} else {
+    debug_to_console("Connected to database!");
 }
 ?>

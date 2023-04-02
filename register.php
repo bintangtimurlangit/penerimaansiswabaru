@@ -17,25 +17,25 @@
         <div class="form signup">
             <span class="title">Pendaftaran PPDB</span>
         </div>
-        <form action="registerProcess.php" class="form">
+        <form method="post" onsubmit="return verifyPassword()" action="registerProcess.php" class="form">
             <div class="input-box">
                 <label>Nama Lengkap</label>
-                <input type="text" placeholder="Masukkan nama lengkap" required />
+                <input name="name" type="text" placeholder="Masukkan nama lengkap" required />
             </div>
 
             <div class="input-box">
                 <label>Alamat Email</label>
-                <input type="text" placeholder="Masukkan alamat email" required />
+                <input name="email" type="text" placeholder="Masukkan alamat email" required />
             </div>
 
             <div class="column">
                 <div class="input-box">
                     <label>Kata Sandi</label>
-                    <input type="password" placeholder="Masukkan kata sandi" required />
+                    <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required />
                 </div>
                 <div class="input-box">
                     <label>Konfirmasi Kata Sandi</label>
-                    <input type="password" placeholder="Ulangi kata sandi" required />
+                    <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Ulangi kata sandi" required />
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
 
                 <div class="column">
                     <input type="text" placeholder="Latitude" required />
-                    <input type="number" placeholder="Longitude" required />
+                    <input type="text" placeholder="Longitude" required />
                 </div>
             </div>
 
@@ -56,7 +56,7 @@
             <span class="file-custom"></span>
 
             <div class="input-field button">
-                <input type="button" value="Register">
+                <input name="submitButton" type="submit" value="Register">
             </div>
 
             <div class="login-signup">
@@ -66,6 +66,7 @@
             </div>
         </form>
     </section>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
