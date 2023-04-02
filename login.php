@@ -1,7 +1,3 @@
-<?php
-require_once("php/connectdb.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,7 +19,7 @@ require_once("php/connectdb.php");
         <div class="form login">
             <span class="title">Masuk PPDB</span>
 
-            <form action="#">
+            <form action="loginProcess.php">
                 <div class="input-field">
                     <input type="text" placeholder="Masukkan alamat email" required>
                     <i class="uil uil-envelope icon"></i>

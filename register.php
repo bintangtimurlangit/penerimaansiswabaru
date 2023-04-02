@@ -1,7 +1,3 @@
-<?php
-require_once("php/connectdb.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +9,7 @@ require_once("php/connectdb.php");
 
         <title>Pendaftaran PPDB | SMPN 69 Philads</title>
 
-        <link rel="stylesheet" href="https://uni    cons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <link rel="stylesheet" href="styleRegister.css">
     </head>
 <body>
@@ -21,7 +17,7 @@ require_once("php/connectdb.php");
         <div class="form signup">
             <span class="title">Pendaftaran PPDB</span>
         </div>
-        <form action="#" class="form">
+        <form action="registerProcess.php" class="form">
             <div class="input-box">
                 <label>Nama Lengkap</label>
                 <input type="text" placeholder="Masukkan nama lengkap" required />
@@ -40,20 +36,6 @@ require_once("php/connectdb.php");
                 <div class="input-box">
                     <label>Konfirmasi Kata Sandi</label>
                     <input type="password" placeholder="Ulangi kata sandi" required />
-                </div>
-            </div>
-
-            <div class="gender-box">
-                <h3>Gender</h3>
-                <div class="gender-option">
-                    <div class="gender">
-                        <input type="radio" id="check-male" name="gender" checked />
-                        <label for="check-male">Laki-laki</label>
-                    </div>
-                    <div class="gender">
-                        <input type="radio" id="check-female" name="gender" />
-                        <label for="check-female">Perempuan</label>
-                    </div>
                 </div>
             </div>
 
