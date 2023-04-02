@@ -5,17 +5,21 @@ require_once("php/connectdb.php");
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <title>Pendaftaran PPDB | SMPN 69 Philads</title>
+
+        <link rel="stylesheet" href="https://uni    cons.iconscout.com/release/v4.0.0/css/line.css">
         <link rel="stylesheet" href="styleRegister.css">
     </head>
 <body>
     <section class="container">
         <div class="form signup">
-            <span class="title">Daftar</span>
+            <span class="title">Pendaftaran PPDB</span>
         </div>
         <form action="#" class="form">
             <div class="input-box">
