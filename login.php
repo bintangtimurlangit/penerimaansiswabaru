@@ -40,7 +40,7 @@ require_once("php/connectdb.php");
                         <input type="checkbox" id="logCheck">
                         <label for="logCheck" class="text">Ingat saya</label>
                     </div>
-                    <a href="#" class="text">Lupa kata sandi?</a>
+                    <a href="forgotPassword.php" class="text">Lupa kata sandi?</a>
                 </div>
 
                 <div class="input-field button">

@@ -21,7 +21,7 @@ require_once("php/connectdb.php");
 <div class="container">
     <div class="forms">
         <div class="form login">
-            <span class="title">Masuk PPDB</span>
+            <span class="title">Atur Ulang Kata Sandi</span>
 
             <form action="#">
                 <div class="input-field">
@@ -30,27 +30,18 @@ require_once("php/connectdb.php");
                 </div>
 
                 <div class="input-field">
-                    <input type="password" class="password" placeholder="Masukkan kata sandi" required>
-                    <i class="uil uil-lock icon"></i>
-                    <i class="uil uil-eye-slash showHidePw"></i>
-                </div>
-
-                <div class="checkbox-text">
-                    <div class="checkbox-content">
-                        <input type="checkbox" id="logCheck">
-                        <label for="logCheck" class="text">Ingat saya</label>
-                    </div>
-                    <a href="#" class="text">Lupa kata sandi?</a>
+                    <input type="text" placeholder="Konfirmasi alamat email" required>
+                    <i class="uil uil-envelope icon"></i>
                 </div>
 
                 <div class="input-field button">
-                    <input type="button" value="Login">
+                    <input type="button" value="Cek Alamat Email">
                 </div>
             </form>
 
             <div class="login-signup">
-                    <span class="text">Belum mendaftar?
-                        <a href="register.php" class="text signup-link">Daftar Sekarang</a>
+                    <span class="text">Berhasil menemukannya?
+                        <a href="login.php" class="text signup-link">Masuk sekarang</a>
                     </span>
             </div>
         </div>
