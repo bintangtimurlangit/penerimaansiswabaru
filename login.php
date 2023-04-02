@@ -21,12 +21,12 @@
 
             <form action="loginProcess.php">
                 <div class="input-field">
-                    <input type="text" placeholder="Masukkan alamat email" required>
+                    <input type="text" name="email" placeholder="Masukkan alamat email" required>
                     <i class="uil uil-envelope icon"></i>
                 </div>
 
                 <div class="input-field">
-                    <input type="password" class="password" placeholder="Masukkan kata sandi" required>
+                    <input type="password" class="password" name="password" placeholder="Masukkan kata sandi" required>
                     <i class="uil uil-lock icon"></i>
                     <i class="uil uil-eye-slash showHidePw"></i>
                 </div>
