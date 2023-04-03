@@ -20,8 +20,9 @@ if (mysqli_num_rows($result) != 0) {
             header('location: admin/dashboardAdmin.php');
         } else {
             $_SESSION['id'] = $row['id'];
-            $_SESSION['email'] = $row['username'];
-            header('location: dashboard.php');
+            $_SESSION['email'] = $row['email'];
+            debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
+            header('location: siswa/dashboard.php');
         }
     } else {
         debug_to_console("Email atau password salah!");

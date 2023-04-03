@@ -1,3 +1,18 @@
+<?php
+require_once("../connectdb.php");
+session_start();
+
+if(isset($_SESSION['id']) && isset($_SESSION['email'])) {
+    if($_SESSION['id'] !== 1 && $_SESSION['email'] !== 'admin') {
+        header('location: ../siswa/dashboard.php');
+    }
+} else {
+    header('location: ../login.php');
+}
+
+debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -174,16 +189,6 @@
 </html>
 
 <?php
-session_start();
-require_once("../connectdb.php");
-
-if(!isset($_SESSION['email']) && !isset($_SESSION['id'])) {
-    if($_SESSION['email'] != 'admin' && $_SESSION['id'] != '1') {
-        header("Location: login.php");
-    }
-    session_destroy();
-}
-
 $sql = "SELECT * FROM data WHERE status='Belum Terdaftar'";
 $result = mysqli_query($conn, $sql);
 $count = mysqli_num_rows($result);
