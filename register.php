@@ -17,7 +17,7 @@
         <div class="form signup">
             <span class="title">Pendaftaran PPDB</span>
         </div>
-        <form method="post" onsubmit="return verifyPassword()" action="registerProcess.php" class="form">
+        <form method="post" onsubmit="return verifyPassword()" action="registerProcess.php" class="form" enctype="multipart/form-data">
             <div class="input-box">
                 <label>Nama Lengkap</label>
                 <input name="name" type="text" placeholder="Masukkan nama lengkap" required />
@@ -40,20 +40,27 @@
             </div>
 
             <div class="input-box address">
+                <label>Tempat & Tanggal Lahir</label>
+                <div class="column">
+                    <input type="text" name="birthPlace" placeholder="Masukkan tempat lahir" required />
+                    <input type="date" name="birthDate" placeholder="Masukkan tanggal lahir" required />
+                </div>
+            </div>
+
+            <div class="input-box address">
                 <label>Alamat</label>
-                <input type="text" placeholder="Masukkan alamat" required />
+                <input type="text" name="address" placeholder="Masukkan alamat" required />
 
                 <div class="column">
-                    <input type="text" placeholder="Latitude" required />
-                    <input type="text" placeholder="Longitude" required />
+                    <input type="text" name="latitude" placeholder="Latitude" required />
+                    <input type="text" name="longitude" placeholder="Longitude" required />
                 </div>
             </div>
 
             <br>
             <label>Pas Foto</label>
             <br>
-            <input type="file" id="pasFoto" placeholder="Masukkan alamat email" aria-label="File browser example" required />
-            <span class="file-custom"></span>
+            <input type="file" id="imgUpload" name="imgUpload"/>
 
             <div class="input-field button">
                 <input name="submitButton" type="submit" value="Register">
