@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,16 +9,16 @@
 
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    <title>Admin Dashboard Panel</title> 
+    <title>Admin | SMPN 69 Philads</title>
 </head>
 <body>
     <nav>
         <div class="logo-name">
             <div class="logo-image">
-                <img src="images/logo.png" alt="">
+                <img src="../images/logo.png" alt="">
             </div>
 
-            <span class="logo_name">CodingLab</span>
+            <span class="logo_name">SMPN 69 Philads</span>
         </div>
 
         <div class="menu-items">
@@ -30,23 +29,23 @@
                 </a></li>
                 <li><a href="#">
                     <i class="uil uil-files-landscapes"></i>
-                    <span class="link-name">Content</span>
+                    <span class="link-name">Belum Terdaftar</span>
                 </a></li>
                 <li><a href="#">
                     <i class="uil uil-chart"></i>
-                    <span class="link-name">Analytics</span>
+                    <span class="link-name">Ditolak</span>
                 </a></li>
                 <li><a href="#">
                     <i class="uil uil-thumbs-up"></i>
-                    <span class="link-name">Like</span>
+                    <span class="link-name">Terdaftar</span>
                 </a></li>
                 <li><a href="#">
                     <i class="uil uil-comments"></i>
-                    <span class="link-name">Comment</span>
+                    <span class="link-name">Belum Diterima</span>
                 </a></li>
                 <li><a href="#">
                     <i class="uil uil-share"></i>
-                    <span class="link-name">Share</span>
+                    <span class="link-name">Diterima</span>
                 </a></li>
             </ul>
             
@@ -88,19 +87,29 @@
                 </div>
 
                 <div class="boxes">
-                    <div class="box box1">
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Total Likes</span>
-                        <span class="number">50,120</span>
-                    </div>
-                    <div class="box box2">
-                        <i class="uil uil-comments"></i>
-                        <span class="text">Comments</span>
-                        <span class="number">20,120</span>
-                    </div>
-                    <div class="box box3">
+                    <div class="box box5">
                         <i class="uil uil-share"></i>
-                        <span class="text">Total Share</span>
+                        <span class="text">Belum Terdaftar</span>
+                        <span class="number">10,120</span>
+                    </div>
+                    <div class="box box5">
+                        <i class="uil uil-share"></i>
+                        <span class="text">Ditolak</span>
+                        <span class="number">10,120</span>
+                    </div>
+                    <div class="box box5">
+                        <i class="uil uil-share"></i>
+                        <span class="text">Terdaftar</span>
+                        <span class="number">10,120</span>
+                    </div>
+                    <div class="box box4">
+                        <i class="uil uil-share"></i>
+                        <span class="text">Belum Diterima</span>
+                        <span class="number">10,120</span>
+                    </div>
+                    <div class="box box5">
+                        <i class="uil uil-share"></i>
+                        <span class="text">Diterima</span>
                         <span class="number">10,120</span>
                     </div>
                 </div>
@@ -109,7 +118,7 @@
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
-                    <span class="text">Recent Activity</span>
+                    <span class="text">Daftar Siswa</span>
                 </div>
 
                 <div class="activity-data">
