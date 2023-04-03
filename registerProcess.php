@@ -37,7 +37,10 @@ if ($imageSize > 5000000) {
     $imageData = addslashes($imageData);
     fclose($fp);
 
-    $imageNameMod = $name . " - " . date("Y-m-d");
+    $imageTypeMod = explode("/", $imageType);
+    $imageTypeMod = end($imageTypeMod);
+    $imageTypeMod = strtolower($imageTypeMod);
+    $imageNameMod = $name . " - " . date("Y-m-d") . '.' . $imageTypeMod;
 
     // save the image to the HTDOCS folder
     move_uploaded_file($imageTmpName, "images/siswa/" . $imageNameMod);
@@ -57,6 +60,27 @@ if ($imageSize > 5000000) {
 
     if ($conn->query($sqlSec) === TRUE) {
         debug_to_console('Successfully registered!');
+
+        echo '
+            <script>
+                window.addEventListener("load", function() {
+                    var popup = document.createElement("div");
+                    popup.className = "popup";
+                    popup.innerHTML = "<h2>Registration Successful!</h2><p>Thank you for registering with our website.</p><p>You can now log in with your username and password.</p><button onclick=\'closePopup()\'>Close</button>";
+                    document.body.appendChild(popup);
+                
+                    var overlay = document.createElement("div");
+                    overlay.className = "overlay";
+                    document.body.appendChild(overlay);
+                
+                    function closePopup() {
+                        popup.style.display = "none";
+                        overlay.style.display = "none";
+                    }
+                });
+            </script>
+          ';
+
     } else {
         debug_to_console("Error: " . $sqlSec . "\n" . $conn->error);
     }
