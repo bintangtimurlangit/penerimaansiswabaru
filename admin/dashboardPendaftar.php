@@ -90,7 +90,7 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
             <div class="overview">
                 <div class="title">
                     <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Cek Upload Berkas</span>
+                    <span class="text">Dashboard</span>
                 </div>
 
                 <div class="boxes">
