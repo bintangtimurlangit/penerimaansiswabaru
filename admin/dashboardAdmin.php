@@ -42,7 +42,7 @@
             </ul>
             
             <ul class="logout-mode">
-                <li><a href="#">
+                <li><a href="../logout.php">
                     <i class="uil uil-signout"></i>
                     <span class="link-name">Logout</span>
                 </a></li>
@@ -174,7 +174,15 @@
 </html>
 
 <?php
+session_start();
 require_once("../connectdb.php");
+
+if(!isset($_SESSION['email']) && !isset($_SESSION['id'])) {
+    if($_SESSION['email'] != 'admin' && $_SESSION['id'] != '1') {
+        header("Location: login.php");
+    }
+    session_destroy();
+}
 
 $sql = "SELECT * FROM data WHERE status='Belum Terdaftar'";
 $result = mysqli_query($conn, $sql);
