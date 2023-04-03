@@ -1,5 +1,5 @@
-/* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -15,9 +15,9 @@
     --black-light-color: #707070;
     --border-color: #e6e5e5;
     --toggle-color: #DDD;
-    --box1-color: #ff4d4d;
-    --box2-color: #ff4d4d;
-    --box3-color: #ff4d4d;
+    --box1-color: #4070f4;
+    --box2-color: #4070f4;
+    --box3-color: #4070f4;
     --title-icon-color: #fff;
 
     /* ====== Transition ====== */
@@ -308,7 +308,7 @@ nav.close ~ .dashboard .top{
     flex-direction: column;
     align-items: center;
     border-radius: 12px;
-    width: calc(100% / 3 - 15px);
+    width: calc(100% / 5 - 15px);
     padding: 15px 20px;
     background-color: var(--box1-color);
     transition: var(--tran-05);

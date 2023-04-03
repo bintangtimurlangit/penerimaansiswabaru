@@ -25,27 +25,19 @@
             <ul class="nav-links">
                 <li><a href="#">
                     <i class="uil uil-estate"></i>
-                    <span class="link-name">Dahsboard</span>
+                    <span class="link-name">Dashboard</span>
                 </a></li>
                 <li><a href="#">
-                    <i class="uil uil-files-landscapes"></i>
-                    <span class="link-name">Belum Terdaftar</span>
+                    <i class="uil uil-user-plus"></i>
+                    <span class="link-name">Pendaftar</span>
                 </a></li>
                 <li><a href="#">
-                    <i class="uil uil-chart"></i>
-                    <span class="link-name">Ditolak</span>
+                    <i class="uil uil-file-graph "></i>
+                    <span class="link-name">Berkas</span>
                 </a></li>
                 <li><a href="#">
-                    <i class="uil uil-thumbs-up"></i>
-                    <span class="link-name">Terdaftar</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="uil uil-comments"></i>
-                    <span class="link-name">Belum Diterima</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="uil uil-share"></i>
-                    <span class="link-name">Diterima</span>
+                    <i class="uil uil-user"></i>
+                    <span class="link-name">Data User</span>
                 </a></li>
             </ul>
             
@@ -88,29 +80,29 @@
 
                 <div class="boxes">
                     <div class="box box5">
-                        <i class="uil uil-share"></i>
+                        <i class="uil uil-user-exclamation"></i>
                         <span class="text">Belum Terdaftar</span>
-                        <span class="number">10,120</span>
+                        <span class="number" id="countBelumTerdaftar">0</span>
                     </div>
                     <div class="box box5">
-                        <i class="uil uil-share"></i>
+                        <i class="uil uil-user-times"></i>
                         <span class="text">Ditolak</span>
-                        <span class="number">10,120</span>
+                        <span class="number" id="countDitolak">0</span>
                     </div>
                     <div class="box box5">
-                        <i class="uil uil-share"></i>
+                        <i class="uil uil-user-check"></i>
                         <span class="text">Terdaftar</span>
-                        <span class="number">10,120</span>
+                        <span class="number" id="countTerdaftar">0</span>
                     </div>
                     <div class="box box4">
-                        <i class="uil uil-share"></i>
+                        <i class="uil uil-user-minus"></i>
                         <span class="text">Belum Diterima</span>
-                        <span class="number">10,120</span>
+                        <span class="number" id="countBelumDiterima">0</span>
                     </div>
                     <div class="box box5">
-                        <i class="uil uil-share"></i>
+                        <i class="uil uil-user-plus"></i>
                         <span class="text">Diterima</span>
-                        <span class="number">10,120</span>
+                        <span class="number" id="countDiterima">0</span>
                     </div>
                 </div>
             </div>
@@ -180,3 +172,43 @@
     <script src="scriptAdmin.js"></script>
 </body>
 </html>
+
+<?php
+require_once("../connectdb.php");
+
+$sql = "SELECT * FROM data WHERE status='Belum Terdaftar'";
+$result = mysqli_query($conn, $sql);
+$count = mysqli_num_rows($result);
+
+echo "<script>document.getElementById('countBelumTerdaftar').innerHTML = '$count';</script>";
+debug_to_console($count);
+
+$sql = "SELECT * FROM data WHERE status='Ditolak'";
+$result = mysqli_query($conn, $sql);
+$count = mysqli_num_rows($result);
+
+echo "<script>document.getElementById('countDitolak').innerHTML = '$count';</script>";
+debug_to_console($count);
+
+$sql = "SELECT * FROM data WHERE status='Terdaftar'";
+$result = mysqli_query($conn, $sql);
+$count = mysqli_num_rows($result);
+
+echo "<script>document.getElementById('countTerdaftar').innerHTML = '$count';</script>";
+debug_to_console($count);
+
+$sql = "SELECT * FROM data WHERE status='Belum Diterima'";
+$result = mysqli_query($conn, $sql);
+$count = mysqli_num_rows($result);
+
+echo "<script>document.getElementById('countBelumDiterima').innerHTML = '$count';</script>";
+debug_to_console($count);
+
+$sql = "SELECT * FROM data WHERE status='Diterima'";
+$result = mysqli_query($conn, $sql);
+$count = mysqli_num_rows($result);
+
+echo "<script>document.getElementById('countDiterima').innerHTML = '$count';</script>";
+debug_to_console($count);
+
+?>
