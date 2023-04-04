@@ -138,6 +138,7 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
                         <span class="data-list">Man Shahi</span>
                         <span class="data-list">Ganesh Chand</span>
                         <span class="data-list">Bikash Chand</span>
+                        <span class="data-list">Bintang Timurlangit</span>
                     </div>
                     <div class="data email">
                         <span class="data-title">Email</span>
