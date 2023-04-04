@@ -42,21 +42,12 @@ body.dark{
     --box3-color: #3A3B3C;
     --title-icon-color: #CCC;
 }
-/* === Custom Scroll Bar CSS === */
 ::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    width: 0;
+    background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #0b3cc1;
+    background: #FF0000;
 }
 
 body.dark::-webkit-scrollbar-thumb:hover,
@@ -349,16 +340,20 @@ nav.close ~ .dashboard .top{
     margin: 0 15px;
 }
 .activity-data .data-title{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--text-color);
 }
 .activity-data .data .data-list{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 400;
     margin-top: 20px;
     white-space: nowrap;
     color: var(--text-color);
+}
+
+.address{
+    word-wrap: break-word;
 }
 
 @media (max-width: 1000px) {

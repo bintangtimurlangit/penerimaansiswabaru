@@ -90,11 +90,6 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
     <section class="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
-
-            <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
-            </div>
         </div>
 
         <div class="dash-content">
