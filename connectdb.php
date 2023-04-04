@@ -2,9 +2,9 @@
 require('debug.php');
 
 $servername = "localhost";
-$username = "id20485280_utswebprog";
-$password_db = "Nvl?PDA/GO}e8_Q?";
-$dbname = "id20485280_db_ppdb_utswebprog";
+$username = "utswebpr_root";
+$password_db = "g4mp4ng4j4";
+$dbname = "utswebpr_database";
 $conn = mysqli_connect($servername, $username, $password_db, $dbname);
 
 if (!$conn) {
