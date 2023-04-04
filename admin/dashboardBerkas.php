@@ -19,10 +19,21 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="styleAdmin.css">
-
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <style>
+        .dash-content .boxes .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 12px;
+            width: calc(100% / 3 - 15px);
+            padding: 15px 20px;
+            background-color: var(--box1-color);
+            transition: var(--tran-05);
+        }
+    </style>
 
     <title>Admin | SMPN 69 Philads</title>
 </head>
@@ -94,30 +105,20 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
                 </div>
 
                 <div class="boxes">
-                    <div class="box box5">
-                        <i class="uil uil-user-exclamation"></i>
-                        <span class="text">Belum Terdaftar</span>
-                        <span class="number" id="countBelumTerdaftar">0</span>
-                    </div>
-                    <div class="box box5">
-                        <i class="uil uil-user-times"></i>
-                        <span class="text">Ditolak</span>
-                        <span class="number" id="countDitolak">0</span>
-                    </div>
-                    <div class="box box5">
+                    <div class="box box1">
                         <i class="uil uil-user-check"></i>
-                        <span class="text">Terdaftar</span>
-                        <span class="number" id="countTerdaftar">0</span>
-                    </div>
-                    <div class="box box4">
-                        <i class="uil uil-user-minus"></i>
                         <span class="text">Belum Diterima</span>
                         <span class="number" id="countBelumDiterima">0</span>
                     </div>
-                    <div class="box box5">
-                        <i class="uil uil-user-plus"></i>
+                    <div class="box box2">
+                        <i class="uil uil-user-minus"></i>
                         <span class="text">Diterima</span>
                         <span class="number" id="countDiterima">0</span>
+                    </div>
+                    <div class="box box3">
+                        <span class="text">Unduh</span>
+                        <span class="text">Semua Berkas</span>
+                        <i style="font-size: 3.25em; padding-top: 0.31em" class="uil uil-file-export"></i>
                     </div>
                 </div>
             </div>
@@ -125,7 +126,64 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
-                    <span class="text">Daftar Siswa</span>
+                    <span class="text">Berkas Belum Diterima</span>
+                </div>
+
+                <div class="activity-data">
+                    <div class="data names">
+                        <span class="data-title">Name</span>
+                        <span class="data-list">Prem Shahi</span>
+                        <span class="data-list">Deepa Chand</span>
+                        <span class="data-list">Manisha Chand</span>
+                        <span class="data-list">Pratima Shahi</span>
+                        <span class="data-list">Man Shahi</span>
+                        <span class="data-list">Ganesh Chand</span>
+                        <span class="data-list">Bikash Chand</span>
+                    </div>
+                    <div class="data email">
+                        <span class="data-title">Email</span>
+                        <span class="data-list">premshahi@gmail.com</span>
+                        <span class="data-list">deepachand@gmail.com</span>
+                        <span class="data-list">prakashhai@gmail.com</span>
+                        <span class="data-list">manishachand@gmail.com</span>
+                        <span class="data-list">pratimashhai@gmail.com</span>
+                        <span class="data-list">manshahi@gmail.com</span>
+                        <span class="data-list">ganeshchand@gmail.com</span>
+                    </div>
+                    <div class="data joined">
+                        <span class="data-title">Joined</span>
+                        <span class="data-list">2022-02-12</span>
+                        <span class="data-list">2022-02-12</span>
+                        <span class="data-list">2022-02-13</span>
+                        <span class="data-list">2022-02-13</span>
+                        <span class="data-list">2022-02-14</span>
+                        <span class="data-list">2022-02-14</span>
+                        <span class="data-list">2022-02-15</span>
+                    </div>
+                    <div class="data type">
+                        <span class="data-title">Type</span>
+                        <span class="data-list">New</span>
+                        <span class="data-list">Member</span>
+                        <span class="data-list">Member</span>
+                        <span class="data-list">New</span>
+                        <span class="data-list">Member</span>
+                        <span class="data-list">New</span>
+                        <span class="data-list">Member</span>
+                    </div>
+                    <div class="data status">
+                        <span class="data-title">Status</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                    </div>
+                </div>
+                <div class="title">
+                    <i class="uil uil-clock-three"></i>
+                    <span class="text">Daftar List Berkas</span>
                 </div>
 
                 <div class="activity-data">
@@ -189,27 +247,6 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
 </html>
 
 <?php
-$sql = "SELECT * FROM data WHERE status='Belum Terdaftar'";
-$result = mysqli_query($conn, $sql);
-$count = mysqli_num_rows($result);
-
-echo "<script>document.getElementById('countBelumTerdaftar').innerHTML = '$count';</script>";
-debug_to_console($count);
-
-$sql = "SELECT * FROM data WHERE status='Ditolak'";
-$result = mysqli_query($conn, $sql);
-$count = mysqli_num_rows($result);
-
-echo "<script>document.getElementById('countDitolak').innerHTML = '$count';</script>";
-debug_to_console($count);
-
-$sql = "SELECT * FROM data WHERE status='Terdaftar'";
-$result = mysqli_query($conn, $sql);
-$count = mysqli_num_rows($result);
-
-echo "<script>document.getElementById('countTerdaftar').innerHTML = '$count';</script>";
-debug_to_console($count);
-
 $sql = "SELECT * FROM data WHERE status='Belum Diterima'";
 $result = mysqli_query($conn, $sql);
 $count = mysqli_num_rows($result);
