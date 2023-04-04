@@ -151,7 +151,7 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
                         ?>
                     </div>
                     <div class="data joined">
-                        <span class="data-title">Tempat Lahir</span>
+                        <span class="data-title" style="font-size: 13.5px;">Tempat Lahir</span>
                         <?php
                         $sql = "SELECT * FROM data";
                         $result = mysqli_query($conn, $sql);
@@ -220,10 +220,35 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
                         <?php
                         $sql = "SELECT * FROM data";
                         $result = mysqli_query($conn, $sql);
+                        $counterAlt = 0;
 
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<span class='data-list'>" . $row['status'] . "</span>";
+                                $counter++;
+                                debug_to_console($counter);
+                            }
+                            echo "</div>";
+                            echo "<div class='data joined'>";
+                            echo "<span class='data-title'>Terima Siswa</span>";
+
+                            while ($counterAlt <= $counter) {
+                                echo "<div class='data-list' style='margin-top: 5px'>
+                                      <button class='button-3' role='button'>Terima</button></div>";
+                                $counterAlt++;
+                                debug_to_console($counterAlt);
+                            }
+
+                            echo "</div>";
+                            echo "<div class='data joined'>";
+                            echo "<span class='data-title'>Tolak Siswa</span>";
+                            $counterAlt = 0;
+
+                            while ($counterAlt <= $counter) {
+                                echo "<div class='data-list' style='margin-top: 5px; margin-left:-10px;'>
+                                      <button class='button-3' role='button'>Tolak</button></div>";
+                                $counterAlt++;
+                                debug_to_console($counterAlt);
                             }
                         }
                         ?>

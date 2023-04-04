@@ -1,0 +1,18 @@
+{
+    "name": "ztarm/uts-webprog",
+    "autoload": {
+        "psr-4": {
+            "Ztarm\\UtsWebprog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bintang Timurlangit",
+            "email": "44738387+bintangtimurlangit@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.28",
+        "setasign/fpdf": "^1.8"
+    }
+}

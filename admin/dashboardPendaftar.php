@@ -21,8 +21,20 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styleAdmin.css">
-
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <style>
+        .dash-content .boxes .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 12px;
+            width: calc(100% / 3 - 15px);
+            padding: 15px 20px;
+            background-color: var(--box1-color);
+            transition: var(--tran-05);
+        }
+    </style>
 
     <title>Admin | SMPN 69 Philads</title>
 </head>
@@ -89,30 +101,20 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
                 </div>
 
                 <div class="boxes">
-                    <div class="box box5">
-                        <i class="uil uil-user-exclamation"></i>
-                        <span class="text">Belum Terdaftar</span>
-                        <span class="number" id="countBelumTerdaftar">0</span>
-                    </div>
-                    <div class="box box5">
-                        <i class="uil uil-user-times"></i>
-                        <span class="text">Ditolak</span>
-                        <span class="number" id="countDitolak">0</span>
-                    </div>
-                    <div class="box box5">
+                    <div class="box box1">
                         <i class="uil uil-user-check"></i>
-                        <span class="text">Terdaftar</span>
-                        <span class="number" id="countTerdaftar">0</span>
-                    </div>
-                    <div class="box box4">
-                        <i class="uil uil-user-minus"></i>
                         <span class="text">Belum Diterima</span>
                         <span class="number" id="countBelumDiterima">0</span>
                     </div>
-                    <div class="box box5">
-                        <i class="uil uil-user-plus"></i>
+                    <div class="box box2">
+                        <i class="uil uil-user-minus"></i>
                         <span class="text">Diterima</span>
                         <span class="number" id="countDiterima">0</span>
+                    </div>
+                    <div class="box box3">
+                        <span class="text">Unduh</span>
+                        <span class="text">Data Pendaftar</span>
+                        <i style="font-size: 3.25em; padding-top: 0.31em" class="uil uil-file-export"></i>
                     </div>
                 </div>
             </div>
