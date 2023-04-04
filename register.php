@@ -11,6 +11,8 @@
 
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <link rel="stylesheet" href="styleRegister.css">
+
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
 <body>
     <section class="container">
@@ -61,6 +63,15 @@
             <label>Pas Foto</label>
             <br>
             <input type="file" id="imgUpload" name="imgUpload"/>
+
+            <div id="recaptcha">
+                <br>
+                <div
+                        class="g-recaptcha"
+                        data-sitekey="6LcHXlklAAAAAGShEEJSr3vJnORKzdAXzPXtSmid"
+                >
+                </div>
+            </div>
 
             <div class="input-field button">
                 <input name="submitButton" type="submit" value="Register">

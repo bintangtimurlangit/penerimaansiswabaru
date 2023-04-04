@@ -6,6 +6,13 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
+#recaptcha{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
 .form .input-field{
     position: relative;
     height: 50px;

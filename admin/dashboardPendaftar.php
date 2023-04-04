@@ -125,54 +125,108 @@ debug_to_console($_SESSION['id'] . " -- " . $_SESSION['email']);
 
                 <div class="activity-data">
                     <div class="data names">
-                        <span class="data-title">Name</span>
-                        <span class="data-list">Prem Shahi</span>
-                        <span class="data-list">Deepa Chand</span>
-                        <span class="data-list">Manisha Chand</span>
-                        <span class="data-list">Pratima Shahi</span>
-                        <span class="data-list">Man Shahi</span>
-                        <span class="data-list">Ganesh Chand</span>
-                        <span class="data-list">Bikash Chand</span>
+                        <span class="data-title">Nama</span>
+                        <?php
+                        $sql = "SELECT * FROM data";
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo " <span class='data-list'>" . $row['name'] . "</span>";
+                            }
+                        }
+                        ?>
                     </div>
                     <div class="data email">
                         <span class="data-title">Email</span>
-                        <span class="data-list">premshahi@gmail.com</span>
-                        <span class="data-list">deepachand@gmail.com</span>
-                        <span class="data-list">prakashhai@gmail.com</span>
-                        <span class="data-list">manishachand@gmail.com</span>
-                        <span class="data-list">pratimashhai@gmail.com</span>
-                        <span class="data-list">manshahi@gmail.com</span>
-                        <span class="data-list">ganeshchand@gmail.com</span>
+                        <?php
+                        $sql = "SELECT * FROM data";
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo " <span class='data-list'>" . $row['email'] . "</span>";
+                            }
+                        }
+                        ?>
                     </div>
                     <div class="data joined">
-                        <span class="data-title">Joined</span>
-                        <span class="data-list">2022-02-12</span>
-                        <span class="data-list">2022-02-12</span>
-                        <span class="data-list">2022-02-13</span>
-                        <span class="data-list">2022-02-13</span>
-                        <span class="data-list">2022-02-14</span>
-                        <span class="data-list">2022-02-14</span>
-                        <span class="data-list">2022-02-15</span>
+                        <span class="data-title">Tempat Lahir</span>
+                        <?php
+                        $sql = "SELECT * FROM data";
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo " <span class='data-list'>" . $row['birth_place'] . "</span>";
+                                debug_to_console($row['birthPlace']);
+                            }
+                        }
+                        ?>
                     </div>
-                    <div class="data type">
-                        <span class="data-title">Type</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
-                        <span class="data-list">New</span>
-                        <span class="data-list">Member</span>
+                    <div class="data joined">
+                        <span class="data-title">Address</span>
+                        <?php
+                        $sql = "SELECT * FROM data";
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo " <span class='data-list'>" . $row['address'] . "</span>";
+                            }
+                        }
+                        ?>
                     </div>
-                    <div class="data status">
+                    <div class="data joined">
+                        <span class="data-title">Jarak</span>
+                        <?php
+                        function distance($lat1, $lon1, $lat2, $lon2, $unit)
+                        {
+                            if (($lat1 == $lat2) && ($lon1 == $lon2)) {
+                                return 0;
+                            } else {
+                                $theta = $lon1 - $lon2;
+                                $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+                                $dist = acos($dist);
+                                $dist = rad2deg($dist);
+                                $miles = $dist * 60 * 1.1515;
+                                $unit = strtoupper($unit);
+
+                                if ($unit == "K") {
+                                    return ($miles * 1.609344);
+                                } else if ($unit == "N") {
+                                    return ($miles * 0.8684);
+                                } else {
+                                    return $miles;
+                                }
+                            }
+                        }
+
+                        $sql = "SELECT * FROM data";
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $coord = $row['coord_lat'] . ', ' . $row['coord_long'];
+                                $latitude2 = substr($coord, 0, 9);
+                                $longitude2 = substr($coord, 11, 20);
+                                echo "<span class='data-list'>" .  round(distance(-6.256484, 106.618423, $latitude2, $longitude2, "K"), 2) . " km" . "</span>";
+                            }
+                        }
+                        ?>
+                    </div>
+                    <div class="data joined">
                         <span class="data-title">Status</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
-                        <span class="data-list">Liked</span>
+                        <?php
+                        $sql = "SELECT * FROM data";
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<span class='data-list'>" . $row['status'] . "</span>";
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
